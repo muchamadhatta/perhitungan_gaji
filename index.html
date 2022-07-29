@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perhitungan Gaji</title>
+  </head>
+  <body>
+    <label> Nama </label>
+    <input type="text" name="" /><br />
+    <label> Waktu Kerja</label>
+    <input type="text" id="wk" /><br />
+    <label> Lembur</label>
+    <input type="text" id="lembur" /><br />
+    <label> Insentif</label>
+    <textarea name="" id="insentif" cols="40" rows="5"></textarea><br />
+    <label>Total Gaji</label>
+    <textarea name="" id="total" cols="40" rows="5"></textarea><br />
+    <button onclick="coba()">Hasil</button>
+    <script type="text/javascript">
+      function coba() {
+        var wk = parseInt(document.getElementById("wk").value);
+        var lembur = parseInt(document.getElementById("lembur").value);
+        var hasil = wk * 90000;
+        var tambah = lembur * 20000;
+        var total;
+        if (lembur >= 3) {
+          total = hasil + tambah + 20000;
+          document.getElementById("insentif").innerHTML = "20000";
+        } else {
+          if (lembur < 3) {
+            total = hasil + tambah;
+            document.getElementById("insentif").innerHTML = "tidak dapat";
+          }
+        }
+        document.getElementById("total").innerHTML = total;
+      }
+    </script>
+  </body>
+</html>
